@@ -1,0 +1,115 @@
+﻿@model Puestos_de_Trabajo.Models.PuestoTrabajo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Puesto de Trabajo</h4>
+    <hr />
+    <dl class="dl-horizontal jumbotron">
+        <dt>
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_Publicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_Publicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dias_trabajo_linea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dias_trabajo_linea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUsers.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

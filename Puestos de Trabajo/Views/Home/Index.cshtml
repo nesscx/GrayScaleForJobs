@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model IEnumerable<Puestos_de_Trabajo.Models.PuestoTrabajo>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Puestos de Trabajo</h2>
+
+    <h2>Filtro</h2>
+
+    <p>
+        @using (Html.BeginForm("Index","Home",FormMethod.Get))
+        {
+            <p>
+                Búsquedas por Cargo: @Html.TextBox("cargo") 
+                <input type="submit" value="Buscar" />
+            </p>
+        }
+    </p>
+    
+    <table class="table table-striped">
+        <tr>
+            <td>
+                <b>Categoría</b>
+            </td>
+            <td>
+                <b>Cargo</b>
+            </td>
+            <td>
+                <b>Descripción</b>
+            </td>
+            <td>
+                <b>Compañía</b>
+            </td>
+            <td>
+                <b>Localidad</b>
+            </td>
+            <td></td>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cargo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empresa.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empresa.localidad)
+                </td>
+            </tr>
+        }
+
+    </table>

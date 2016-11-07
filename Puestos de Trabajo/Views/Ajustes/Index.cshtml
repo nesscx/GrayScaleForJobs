@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Puestos_de_Trabajo.Models.Ajustes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table table-striped">
+    <tr>
+        <td>
+            <b>Máximo de Puestos por Página</b>
+        </td>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.max_puestos)
+            </td>
+            <td>
+                <a class="btn btn-primary glyphicon glyphicon-pencil" @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    <a class="btn btn-success glyphicon glyphicon-eye-open" @Html.ActionLink("Details", "Details", new { id = item.id }) 
+            </td>
+        </tr>
+    }
+
+</table>

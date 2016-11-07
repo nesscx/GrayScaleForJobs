@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Puestos_de_Trabajo.Models.Empresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Compañías</h2>
+
+<p>
+    <a href="~/Empresas/Create">
+        <button class="btn btn-default">
+            Registra una Empresa
+        </button>
+    </a>
+</p>
+<table class="table table-striped">
+    <tr>
+        <td>
+            <b>Empresa</b>
+        </td>
+        <td>
+            <b>Descripción</b>
+        </td>
+        <td>
+            <b>Localidad</b>
+        </td>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.localidad)
+            </td>
+            <td>
+                <a class="btn btn-primary glyphicon glyphicon-pencil" @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    <a class="btn btn-success glyphicon glyphicon-eye-open" @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                     <a class="btn btn-danger glyphicon glyphicon-trash"  @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

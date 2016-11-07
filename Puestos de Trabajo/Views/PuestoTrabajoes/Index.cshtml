@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Puestos_de_Trabajo.Models.PuestoTrabajo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <h2>Puestos de Trabajo</h2>
+
+                      <p>
+                          <a href="~/PuestoTrabajoes/Create">
+                              <button class="btn btn-default">
+                                  Postear un Trabajo
+                              </button>
+                          </a>
+                      </p>
+
+
+    <p>
+        @using (Html.BeginForm("Index","PuestoTrabajoes",FormMethod.Get))
+        {
+            <p>
+                Búsquedas por Cargo: @Html.TextBox("cargo") 
+                <input type="submit" value="Buscar" />
+            </p>
+        }
+    </p>
+
+    <table class="table table-striped">
+        <tr>
+            <td>
+                <b>Categoría</b>
+            </td>
+            <td>
+                <b>Cargo</b>
+            </td>
+            <td>
+                <b>Descripción</b>
+            </td>
+            <td> 
+                <b>Compañía</b>
+            </td>
+            <td>
+                <b>Localidad</b>
+            </td>
+            <td></td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cargo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empresa.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empresa.localidad)
+                </td>
+                <td>
+                    <a class="btn btn-primary glyphicon glyphicon-pencil" @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    <a class="btn btn-success glyphicon glyphicon-eye-open" @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                     <a class="btn btn-danger glyphicon glyphicon-trash"  @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>

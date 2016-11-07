@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Puestos_de_Trabajo.Models.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categorías</h2>
+
+<p>
+    <a href="~/Categorias/Create">
+        <button class="btn btn-default">
+            Registra una Categoría
+        </button>
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <td>
+            <b>Descripción</b>
+        </td>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
