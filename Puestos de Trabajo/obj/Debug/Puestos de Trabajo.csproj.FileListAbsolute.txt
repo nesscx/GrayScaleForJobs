@@ -79,4 +79,3 @@ C:\Users\chris\Documents\Visual Studio 2015\Projects\Puestos de Trabajo\Puestos 
 C:\Users\chris\Documents\Visual Studio 2015\Projects\Puestos de Trabajo\Puestos de Trabajo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\chris\Documents\Visual Studio 2015\Projects\Puestos de Trabajo\Puestos de Trabajo\obj\Debug\Puestos de Trabajo.dll
 C:\Users\chris\Documents\Visual Studio 2015\Projects\Puestos de Trabajo\Puestos de Trabajo\obj\Debug\Puestos de Trabajo.pdb
-C:\Users\chris\Documents\Visual Studio 2015\Projects\Puestos de Trabajo\Puestos de Trabajo\obj\Debug\Puestos de Trabajo.csprojResolveAssemblyReference.cache

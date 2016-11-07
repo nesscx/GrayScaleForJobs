@@ -199,6 +199,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AjustesController.cs" />
+    <Compile Include="Controllers\AspNetRolesController.cs" />
+    <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\EmpresasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -209,6 +211,9 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Ajustes.cs">
+      <DependentUpon>EmpleadosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRoles.cs">
       <DependentUpon>EmpleadosModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUsers.cs">
@@ -240,6 +245,7 @@
     <Compile Include="Models\PuestoTrabajo.cs">
       <DependentUpon>EmpleadosModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RolesUser.cs" />
     <Compile Include="Models\Tipo.cs">
       <DependentUpon>EmpleadosModel.tt</DependentUpon>
     </Compile>
@@ -391,6 +397,16 @@
     <Content Include="Views\PuestoTrabajoes\Details.cshtml" />
     <Content Include="Views\PuestoTrabajoes\Edit.cshtml" />
     <Content Include="Views\PuestoTrabajoes\Index.cshtml" />
+    <Content Include="Views\AspNetRoles\Create.cshtml" />
+    <Content Include="Views\AspNetRoles\Delete.cshtml" />
+    <Content Include="Views\AspNetRoles\Details.cshtml" />
+    <Content Include="Views\AspNetRoles\Edit.cshtml" />
+    <Content Include="Views\AspNetRoles\Index.cshtml" />
+    <Content Include="Views\AspNetUsers\Create.cshtml" />
+    <Content Include="Views\AspNetUsers\Delete.cshtml" />
+    <Content Include="Views\AspNetUsers\Details.cshtml" />
+    <Content Include="Views\AspNetUsers\Edit.cshtml" />
+    <Content Include="Views\AspNetUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

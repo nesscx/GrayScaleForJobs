@@ -24,6 +24,7 @@
     <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
     <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="PuestoTrabajo" Relationship="Self.FK_PuestoTrabajo_AspNetUsers" FromRole="AspNetUsers" ToRole="PuestoTrabajo" />
+    <NavigationProperty Name="AspNetRoles" Relationship="PuestosModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
   </EntityType>
   <EntityType Name="Categoria">
     <Key>
@@ -157,6 +158,11 @@
       <End Role="Usuario" EntitySet="Usuario" />
     </AssociationSet>
     <EntitySet Name="Tipo" EntityType="PuestosModel.Tipo" />
+    <EntitySet Name="AspNetRoles" EntityType="PuestosModel.AspNetRoles" />
+    <AssociationSet Name="AspNetUserRoles" Association="PuestosModel.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Tipo">
     <Key>
@@ -164,4 +170,16 @@
     </Key>
     <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="PuestosModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <Association Name="AspNetUserRoles">
+    <End Type="PuestosModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
+    <End Type="PuestosModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+  </Association>
 </Schema>

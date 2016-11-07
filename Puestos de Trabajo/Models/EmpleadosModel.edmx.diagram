@@ -17,6 +17,8 @@
         <AssociationConnector Association="PuestosModel.fk_Empresa_Puesto" ManuallyRouted="false" />
         <AssociationConnector Association="PuestosModel.fk_Usuario_TipoUsuario" ManuallyRouted="false" />
         <EntityTypeShape EntityType="PuestosModel.Tipo" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="PuestosModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="12.375" />
+        <AssociationConnector Association="PuestosModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

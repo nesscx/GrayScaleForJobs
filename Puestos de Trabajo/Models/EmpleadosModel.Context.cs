@@ -33,5 +33,6 @@ namespace Puestos_de_Trabajo.Models
         public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Tipo> Tipo { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
     }
 }

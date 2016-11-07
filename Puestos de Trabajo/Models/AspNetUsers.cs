@@ -18,6 +18,7 @@ namespace Puestos_de_Trabajo.Models
         public AspNetUsers()
         {
             this.PuestoTrabajo = new HashSet<PuestoTrabajo>();
+            this.AspNetRoles = new HashSet<AspNetRoles>();
         }
     
         public string Id { get; set; }
@@ -35,5 +36,7 @@ namespace Puestos_de_Trabajo.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PuestoTrabajo> PuestoTrabajo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetRoles> AspNetRoles { get; set; }
     }
 }

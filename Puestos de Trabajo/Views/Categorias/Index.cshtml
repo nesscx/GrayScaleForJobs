@@ -14,7 +14,7 @@
         </button>
     </a>
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
         <td>
             <b>Descripción</b>
@@ -22,17 +22,18 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                <a class="btn btn-primary glyphicon glyphicon-pencil" @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    <a class="btn btn-success glyphicon glyphicon-eye-open" @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                     <a class="btn btn-danger glyphicon glyphicon-trash"  @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
 
 </table>
